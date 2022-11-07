@@ -67,21 +67,35 @@ const ProductDetails = ({ product, products }: Props) => {
 }
 
 export const getStaticProps = async (context: any) => {
-  const resProduct = await fetch(`https://fakestoreapi.com/products/${context.params.id}`)
-  const product = await resProduct.json()
+  try {
+    const resProduct = await fetch(`https://fakestoreapi.com/products/${context.params.id}`)
+    const product = await resProduct.json()
 
-  const resProducts = await fetch(`https://fakestoreapi.com/products/category/${product.category}`)
-  const products = await resProducts.json()
+    const resProducts = await fetch(`https://fakestoreapi.com/products/category/${product.category}`)
+    const products = await resProducts.json()
 
-  return { props: { product, products } }
+    return { props: { product, products } }
+  } catch (error) {
+    console.error(error)
+    return {
+      props: {
+        product: {}, products: []
+      }
+    }
+  }
 }
 
 export const getStaticPaths = async () => {
-  const res = await fetch(`https://fakestoreapi.com/products`)
-  const products = await res.json()
-  const paths = products.map((product: IProduct) => ({ params: { id: product.id.toString() } }))
+  try {
+    const res = await fetch(`https://fakestoreapi.com/products`)
+    const products = await res.json()
+    const paths = products.map((product: IProduct) => ({ params: { id: product.id.toString() } }))
 
-  return { paths, fallback: 'blocking' }
+    return { paths, fallback: 'blocking' }
+  } catch (error) {
+    console.error(error)
+    return { paths: [], fallback: 'blocking' }
+  }
 }
 
 export default ProductDetails

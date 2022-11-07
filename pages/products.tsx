@@ -15,16 +15,21 @@ const products = ({ products }: Props) => {
       </div>
 
       <div className="grid">
-        {products?.map((product: IProduct) => <Product key={product.id} product={product}/>)}
+        {products?.map((product: IProduct) => <Product key={product.id} product={product} />)}
       </div>
     </>
   )
 }
 
 export const getServerSideProps = async () => {
-  const res = await fetch(`https://fakestoreapi.com/products`)
-  const products = await res.json()
-  return { props: { products } }
+  try {
+    const res = await fetch(`https://fakestoreapi.com/products`)
+    const products = await res.json()
+    return { props: { products } }
+  } catch (error) {
+    console.error(error)
+    return { props: { products: [] } }
+  }
 }
 
 export default products

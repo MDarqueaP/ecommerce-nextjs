@@ -48,9 +48,14 @@ const index = ({ products }: Props) => {
 }
 
 export const getServerSideProps = async () => {
-  const res = await fetch(`https://fakestoreapi.com/products?limit=4`)
-  const products = await res.json()
-  return { props: { products } }
+  try {
+    const res = await fetch(`https://fakestoreapi.com/products?limit=4`)
+    const products = await res.json()
+    return { props: { products } }
+  } catch (error) {
+    console.error(error)
+    return { props: { products: [] } }
+  }
 }
 
 export default index
