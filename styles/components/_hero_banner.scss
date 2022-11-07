@@ -1,0 +1,92 @@
+.hero-banner-container {
+  padding: 100px 40px;
+  background-color: $bg-light-color;
+  border-radius: 15px;
+  position: relative;
+  height: 500px;
+  line-height: 0.9;
+  width: 100%;
+  z-index: 0;
+  .top-text {
+    font-size: 20px;
+    @include for-xs-screen {
+      text-align: center;
+    }
+  }
+  h3 {
+    font-size: 4rem;
+    margin-top: 4px;
+    @include for-xs-screen {
+      text-align: center;
+      font-size: 55px;
+    }
+  }
+  h1 {
+    color: $white-color;
+    font-size: 10em;
+    text-transform: uppercase;
+    @include for-md-screen {
+      font-size: 95px;
+    }
+    @include for-xs-screen {
+      text-align: center;
+      font-size: 85px;
+    }
+  }
+  button {
+    border-radius: 15px;
+    padding: 10px 16px;
+    background-color: $red-color;
+    color: $white-color;
+    border: none;
+    margin-top: 40px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    z-index: 10000 !important;
+  }
+  .flex {
+    @include for-xs-screen {
+      justify-content: center;
+    }
+  }
+}
+
+.hero-banner-image {
+  position: absolute;
+  left: 50% !important;
+  width: 450px !important;
+  height: auto !important;
+  @include for-md-screen {
+    width: 330px !important;
+    top: 10% !important;
+    left: 40% !important;
+  }
+  @include for-xs-screen {
+    left: 0% !important;
+    z-index: -1;
+    opacity: 0.3;
+  }
+}
+
+.desc {
+  position: absolute;
+  right: 10%;
+  bottom: 5%;
+  width: 300px;
+  line-height: 1.3;
+  display: flex;
+  flex-direction: column;
+  color: $text-color-title;
+  p {
+    color: $text-color-body;
+    font-weight: 100;
+    text-align: end;
+  }
+  h5 {
+    margin-bottom: 12px;
+    font-weight: 700;
+    font-size: 16px;
+    align-self: flex-end;
+  }
+}

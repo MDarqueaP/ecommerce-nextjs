@@ -1,0 +1,41 @@
+@mixin for-xxl-screen {
+  @media (max-width: 1400px) {
+    @content;
+  }
+}
+
+@mixin for-xl-screen {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin for-lg-screen {
+  @media (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin for-md-screen {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin for-sm-screen {
+  @media (max-width: 576px) {
+    @content;
+  }
+}
+
+@mixin for-xs-screen {
+  @media (max-width: 425px) {
+    @content;
+  }
+}
+
+@mixin for-xxs-screen {
+  @media (max-width: 320px) {
+    @content;
+  }
+}

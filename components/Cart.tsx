@@ -68,7 +68,7 @@ const Cart = () => {
               <h3>Subtotal:</h3>
               <h3>${totalPrice.toFixed(2)}</h3>
             </div>
-            <div className='btn-container'>
+            <div className='text-center'>
               <Link href='/success'>
                 <button type='button' className='btn'>
                   Go to checkout

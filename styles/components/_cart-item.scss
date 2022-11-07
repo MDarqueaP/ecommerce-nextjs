@@ -1,0 +1,16 @@
+.product {
+  display: flex;
+  gap: 30px;
+  padding: 20px;
+  .cart-product-image {
+    position: relative !important;
+    width: 150px !important;
+    height: auto !important;
+    border-radius: 15px;
+    @include for-md-screen {
+      position: relative !important;
+      width: 25% !important;
+      height: 25% !important;
+    }
+  }
+}

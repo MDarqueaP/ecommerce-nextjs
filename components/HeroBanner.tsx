@@ -1,23 +1,22 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import React from 'react'
-import bannerImg from '../public/img/hero-banner-img.webp'
 
 const HeroBanner = () => {
   return (
     <div className='hero-banner-container'>
       <div>
-        <p className='beats-solo'>Best solo air</p>
-        <h3>Summer Sale</h3>
-        <h1>FINE</h1>
-        <Image src={bannerImg} alt="headphones" className='hero-banner-image' />
-        <div>
-          <Link href={`/product/1`}>
-            <button type='button'>Shop now</button>
+        <p className='top-text'>Best selling products</p>
+        <h3>Summer</h3>
+        <h1>sale</h1>
+        <Image src='/img/hero-banner-img.webp' alt="headphones" layout='fill' className='hero-banner-image' />
+        <div className='flex'>
+          <Link href={`/products`}>
+            <button type='button'>Our products</button>
           </Link>
           <div className='desc'>
-            <h5>Description</h5>
-            <p>Best headphones on the market</p>
+            <h5>Always</h5>
+            <p>Best products on the market</p>
           </div>
         </div>
       </div>

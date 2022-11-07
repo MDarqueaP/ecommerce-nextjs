@@ -1,4 +1,9 @@
-import '../styles/globals.css'
+import '/node_modules/primeflex/primeflex.css'
+import 'primereact/resources/primereact.min.css'
+import 'primeicons/primeicons.css'
+import 'primereact/resources/themes/bootstrap4-light-blue/theme.css'
+import '../styles/main.scss'
+
 import { Layout } from '../components'
 import type { AppProps } from 'next/app'
 import { StateContext } from '../context/stateContext'

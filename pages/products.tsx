@@ -14,7 +14,7 @@ const products = ({ products }: Props) => {
         <p>Speakers of many variations</p>
       </div>
 
-      <div className="products-container">
+      <div className="grid">
         {products?.map((product: IProduct) => <Product key={product.id} product={product}/>)}
       </div>
     </>

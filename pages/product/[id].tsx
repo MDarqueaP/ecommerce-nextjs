@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
-import { AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar } from 'react-icons/ai'
+import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai'
+import { Rating } from 'primereact/rating';
 import { Product } from '../../components'
 import { IProduct } from '../../types'
 import { useStateContext } from '../../context/stateContext'
@@ -21,19 +22,14 @@ const ProductDetails = ({ product, products }: Props) => {
   return (
     <div>
       <div className='product-detail-container'>
-        <div>
-          <Image src={product.image} alt={product.title} layout='fill' className='cart-product-image' />
+        <div className='w-full flex justify-content-center'>
+          <Image src={product.image} alt={product.title} layout='fill' className='product-detail-image' />
         </div>
         <div className='product-detail-desc'>
           <h1>{product.title}</h1>
           <div className='reviews'>
             <div>
-              <AiFillStar />
-              <AiFillStar />
-              <AiFillStar />
-              <AiFillStar />
-              <AiOutlineStar />
-              <p>({product.rating.rate})</p>
+              <Rating value={product.rating.rate} readOnly={true} cancel={false} />
             </div>
             <p>({product.rating.count})</p>
           </div>
@@ -55,14 +51,14 @@ const ProductDetails = ({ product, products }: Props) => {
             </p>
           </div>
           <div className='buttons'>
-            <button type='button' className='add-to-cart' onClick={() => onAdd(product, qty)}>Add to cart</button>
-            <button type='button' className='buy-now' onClick={handleBuyNow}>Buy now</button>
+            <button type='button' className='cursor-pointer add-to-cart white' onClick={() => onAdd(product, qty)}>Add to cart</button>
+            <button type='button' className='cursor-pointer add-to-cart red' onClick={handleBuyNow}>Buy now</button>
           </div>
         </div>
       </div>
       <div className='maylike-products-wrapper'>
-        <h2>You may also like</h2>
-        <div className="products-container">
+        <h2>Products you may also like</h2>
+        <div className="grid">
           {products?.map((product: IProduct) => <Product key={product.id} product={product} />)}
         </div>
       </div>

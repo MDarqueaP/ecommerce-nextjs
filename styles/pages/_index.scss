@@ -1,0 +1,28 @@
+.about-us {
+  padding: 20px;
+  background-color: $red-color;
+  border-radius: 15px;
+  line-height: 1;
+  color: $white-color;
+  width: 100%;
+  img {
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+    padding: 1rem;
+    border-radius: 50%;
+    @include for-md-screen {
+      width: 300px;
+    }
+  }
+  p {
+    font-size: 17px;
+  }
+  h3 {
+    font-size: 25px;
+  }
+  h5 {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+}

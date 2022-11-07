@@ -1,0 +1,38 @@
+.navbar-container {
+  padding-top: 0;
+  padding-bottom: 10px;
+  width: 100%;
+  max-width: 1400px;
+  .p-menubar {
+    background-color: transparent;
+  }
+}
+
+.nav-item {
+  color: $quantity-color;
+  font-size: 18px;
+}
+
+.cart-icon {
+  position: relative;
+  border: none;
+  font-size: 25px;
+  color: $quantity-color;
+  transition: transform .4s ease;
+  background-color: transparent;
+  &:hover {
+    transform: scale(1.1, 1.1);
+  }
+  &-qty {
+    position: absolute;
+    right: -8px;
+    font-size: 12px;
+    color: #eee;
+    background-color: $red-color;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    text-align: center;
+    font-weight: 600;
+  }
+}
